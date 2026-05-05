@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1100" viewBox="0 0 1800 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Workspace consulenza IT</title>
+  <desc id="desc">Scrivania moderna con laptop, dashboard architetturali, note di progetto e ambiente professionale.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#38515a"/>
+      <stop offset="0.48" stop-color="#edf0ed"/>
+      <stop offset="1" stop-color="#8d9d98"/>
+    </linearGradient>
+    <linearGradient id="desk" x1="0" x2="1">
+      <stop offset="0" stop-color="#24313a"/>
+      <stop offset="1" stop-color="#51605b"/>
+    </linearGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="22" stdDeviation="22" flood-color="#111820" flood-opacity="0.24"/>
+    </filter>
+  </defs>
+  <rect width="1800" height="1100" fill="url(#wall)"/>
+  <rect x="0" y="704" width="1800" height="396" fill="url(#desk)"/>
+  <g opacity="0.22">
+    <path d="M88 182h438M88 230h318M88 278h390M1270 172h350M1270 220h270M1270 268h314" stroke="#eef4f1" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="1182" cy="238" r="92" fill="none" stroke="#eef4f1" stroke-width="12"/>
+    <path d="M1182 146v92l66 43" fill="none" stroke="#eef4f1" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="508" y="275" width="760" height="478" rx="28" fill="#171d24"/>
+    <rect x="540" y="314" width="696" height="390" rx="16" fill="#f7f8f6"/>
+    <rect x="540" y="314" width="696" height="58" rx="16" fill="#202b33"/>
+    <circle cx="583" cy="343" r="8" fill="#d86535"/>
+    <circle cx="610" cy="343" r="8" fill="#e6b85c"/>
+    <circle cx="637" cy="343" r="8" fill="#0b6b5d"/>
+    <rect x="584" y="416" width="226" height="116" rx="12" fill="#e5ece9"/>
+    <rect x="842" y="416" width="334" height="116" rx="12" fill="#dfe8e4"/>
+    <rect x="584" y="564" width="592" height="96" rx="12" fill="#eef2ef"/>
+    <path d="M618 620c54-72 112-70 174-8s122 61 182 8 114-80 166-20" fill="none" stroke="#0b6b5d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M882 486h250M882 518h180M622 458h116M622 490h84" stroke="#26323a" stroke-width="13" stroke-linecap="round"/>
+    <rect x="642" y="754" width="488" height="42" rx="10" fill="#151a20"/>
+    <path d="M736 796h306l58 78H678z" fill="#202932"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="176" y="760" width="315" height="214" rx="18" fill="#f7f8f6"/>
+    <path d="M220 820h214M220 862h170M220 904h226" stroke="#2c383d" stroke-width="15" stroke-linecap="round"/>
+    <rect x="220" y="930" width="84" height="18" rx="9" fill="#d86535"/>
+  </g>
+  <g filter="url(#softShadow)">
+    <rect x="1308" y="742" width="292" height="188" rx="22" fill="#f7f8f6"/>
+    <rect x="1348" y="794" width="70" height="88" rx="10" fill="#0b6b5d"/>
+    <rect x="1440" y="770" width="70" height="112" rx="10" fill="#d86535"/>
+    <rect x="1532" y="826" width="28" height="56" rx="8" fill="#25333a"/>
+  </g>
+  <g opacity="0.34">
+    <circle cx="1514" cy="458" r="132" fill="#d86535"/>
+    <circle cx="310" cy="514" r="88" fill="#0b6b5d"/>
+  </g>
+</svg>
