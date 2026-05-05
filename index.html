@@ -6,23 +6,17 @@
     <title>Alessandro Esposito | IT Architecture Consultant</title>
     <meta
       name="description"
-      content="Portfolio professionale di Alessandro Esposito, IT Architecture Consultant: competenze, case study, progetti, metodo e contatti in un unico hub digitale."
+      content="Portfolio professionale di Alessandro Esposito, IT Architecture Consultant: competenze, case study, percorso, certificazioni e contatti in un unico hub digitale."
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Torna all'inizio">
-        <span class="brand-mark">AE</span>
-        <span>Alessandro Esposito</span>
+        <span class="brand-mark" data-content="person.initials">AE</span>
+        <span data-content="person.name">Alessandro Esposito</span>
       </a>
-      <nav class="nav" aria-label="Navigazione principale">
-        <a href="#profilo">Profilo</a>
-        <a href="#competenze">Competenze</a>
-        <a href="#case-study">Case study</a>
-        <a href="#progetti">Progetti</a>
-        <a href="#contatti">Contatti</a>
-      </nav>
+      <nav class="nav" aria-label="Navigazione principale" data-render="navigation"></nav>
       <button class="nav-toggle" type="button" aria-label="Apri menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -34,179 +28,71 @@
         <div class="hero-media" role="img" aria-label="Postazione di consulenza IT con dashboard architetturali e workflow digitali"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-          <p class="eyebrow">IT Architecture Consultant</p>
-          <h1 id="hero-title">Alessandro Esposito</h1>
-          <p class="hero-copy">
-            Hub professionale per esplorare competenze, metodo di lavoro, progetti tecnici e case study:
-            una fonte unica pensata per sostituire CV, LinkedIn e GitHub.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#case-study">Vedi case study</a>
-            <a class="button secondary" href="#contatti">Contattami</a>
-          </div>
+          <p class="eyebrow" data-content="hero.eyebrow">IT Architecture Consultant</p>
+          <h1 id="hero-title" data-content="hero.title">Alessandro Esposito</h1>
+          <p class="hero-copy" data-content="hero.copy"></p>
+          <div class="hero-actions" data-render="heroActions"></div>
         </div>
       </section>
 
-      <section class="snapshot" aria-label="Sintesi professionale">
-        <div>
-          <strong>Focus</strong>
-          <span>Architecture advisory, cloud strategy, modernization, governance</span>
-        </div>
-        <div>
-          <strong>Output</strong>
-          <span>Roadmap, reference architecture, assessment, proof of concept</span>
-        </div>
-        <div>
-          <strong>Approccio</strong>
-          <span>Business outcome, pragmatismo tecnico, execution controllata</span>
-        </div>
-      </section>
+      <section class="snapshot" aria-label="Sintesi professionale" data-render="snapshot"></section>
 
       <section id="profilo" class="section two-column">
         <div>
-          <p class="eyebrow">Profilo</p>
-          <h2>Architettura IT orientata a decisioni, priorità e risultati misurabili.</h2>
+          <p class="eyebrow" data-content="profile.eyebrow">Profilo</p>
+          <h2 data-content="profile.title"></h2>
         </div>
-        <div class="rich-text">
-          <p>
-            Aiuto aziende e team tecnici a trasformare obiettivi di business in architetture sostenibili,
-            scegliendo tecnologie, pattern e roadmap con un equilibrio concreto tra ambizione, vincoli e rischio.
-          </p>
-          <p>
-            Questo portfolio raccoglie informazioni professionali normalmente disperse tra CV, profili social
-            e repository: competenze, esperienze, casi d'uso, materiali tecnici e punti di contatto.
-          </p>
-        </div>
+        <div class="rich-text" data-render="profileParagraphs"></div>
       </section>
 
       <section id="competenze" class="section">
         <div class="section-heading">
-          <p class="eyebrow">Competenze</p>
-          <h2>Aree di consulenza</h2>
+          <p class="eyebrow" data-content="capabilities.eyebrow">Competenze</p>
+          <h2 data-content="capabilities.title"></h2>
         </div>
-        <div class="capability-grid">
-          <article class="card">
-            <span class="icon">01</span>
-            <h3>Enterprise & Solution Architecture</h3>
-            <p>Disegno di architetture target, integrazione tra sistemi, domini applicativi e scelte tecnologiche.</p>
-          </article>
-          <article class="card">
-            <span class="icon">02</span>
-            <h3>Cloud & Platform Strategy</h3>
-            <p>Assessment, landing zone, migrazione, governance, resilienza e ottimizzazione dei costi.</p>
-          </article>
-          <article class="card">
-            <span class="icon">03</span>
-            <h3>Modernizzazione applicativa</h3>
-            <p>Refactoring, decomposizione, API strategy, integrazione dati e riduzione del debito tecnico.</p>
-          </article>
-          <article class="card">
-            <span class="icon">04</span>
-            <h3>Technical Leadership</h3>
-            <p>Allineamento stakeholder, decision record, mentoring tecnico e supporto a team cross-funzionali.</p>
-          </article>
-        </div>
+        <div class="capability-grid" data-render="capabilities"></div>
       </section>
 
       <section id="case-study" class="section accent">
         <div class="section-heading">
-          <p class="eyebrow">Case study</p>
-          <h2>Storie progettuali da rendere pubbliche o condividere in forma riservata.</h2>
+          <p class="eyebrow" data-content="caseStudies.eyebrow">Case study</p>
+          <h2 data-content="caseStudies.title"></h2>
         </div>
-        <div class="case-list">
-          <article>
-            <span>Assessment</span>
-            <h3>Valutazione architetturale di piattaforma applicativa</h3>
-            <p>Analisi dello stato corrente, identificazione dei rischi, backlog tecnico e roadmap evolutiva.</p>
-          </article>
-          <article>
-            <span>Modernization</span>
-            <h3>Disegno di percorso cloud-ready</h3>
-            <p>Definizione target architecture, principi di migrazione e modello operativo per la piattaforma.</p>
-          </article>
-          <article>
-            <span>Governance</span>
-            <h3>Standardizzazione decisionale per team tecnici</h3>
-            <p>Template ADR, criteri di review, guardrail e meccanismi per rendere tracciabili le scelte.</p>
-          </article>
-        </div>
+        <div class="case-list" data-render="caseStudies"></div>
       </section>
 
-      <section id="progetti" class="section">
+      <section id="percorso" class="section timeline-section">
         <div class="section-heading">
-          <p class="eyebrow">Progetti tecnici</p>
-          <h2>Un GitHub narrato: meno elenco di repository, più contesto sulle decisioni.</h2>
+          <p class="eyebrow" data-content="journey.eyebrow">Percorso</p>
+          <h2 data-content="journey.title"></h2>
         </div>
-        <div class="project-grid">
-          <article class="project">
-            <div>
-              <span class="tag">Architecture</span>
-              <h3>Reference Architecture Kit</h3>
-            </div>
-            <p>Raccolta di pattern, diagrammi e checklist per accelerare discovery e design tecnico.</p>
-            <a href="#contatti">Richiedi accesso</a>
-          </article>
-          <article class="project">
-            <div>
-              <span class="tag">Automation</span>
-              <h3>Assessment Toolkit</h3>
-            </div>
-            <p>Strumenti e template per mappare sistemi, dipendenze, rischi e priorità di intervento.</p>
-            <a href="#contatti">Parliamone</a>
-          </article>
-          <article class="project">
-            <div>
-              <span class="tag">Knowledge</span>
-              <h3>Decision Log</h3>
-            </div>
-            <p>Esempi di architetture e decision record pensati per comunicare tradeoff in modo chiaro.</p>
-            <a href="#contatti">Vedi dettagli</a>
-          </article>
-        </div>
+        <ol class="vertical-timeline" data-render="journey"></ol>
       </section>
 
-      <section class="section timeline-section">
+      <section id="certificati" class="section certificates-section">
         <div class="section-heading">
-          <p class="eyebrow">Percorso</p>
-          <h2>Una lettura più utile del curriculum.</h2>
+          <p class="eyebrow" data-content="certificates.eyebrow">Certificati</p>
+          <h2 data-content="certificates.title"></h2>
+          <p class="section-intro" data-content="certificates.intro"></p>
         </div>
-        <ol class="timeline">
-          <li>
-            <span>Oggi</span>
-            <strong>Consulenza architetturale</strong>
-            <p>Supporto a organizzazioni che devono prendere decisioni tecniche solide e governabili.</p>
-          </li>
-          <li>
-            <span>Esperienza</span>
-            <strong>Delivery e advisory</strong>
-            <p>Traduzione di vincoli tecnici e organizzativi in piani eseguibili da team reali.</p>
-          </li>
-          <li>
-            <span>Metodo</span>
-            <strong>Documentazione decisionale</strong>
-            <p>Artefatti sintetici, revisionabili e orientati all'azione, non documentazione fine a se stessa.</p>
-          </li>
-        </ol>
+        <div class="certificate-grid" data-render="certificates"></div>
       </section>
 
       <section id="contatti" class="contact">
         <div>
-          <p class="eyebrow">Contatti</p>
-          <h2>Per opportunità, collaborazioni o confronti tecnici.</h2>
+          <p class="eyebrow" data-content="contact.eyebrow">Contatti</p>
+          <h2 data-content="contact.title"></h2>
         </div>
-        <div class="contact-actions">
-          <a class="button primary" href="mailto:alessandro.esposito@example.com">Email</a>
-          <a class="button secondary" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="button secondary" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
-        </div>
+        <div class="contact-actions" data-render="contactActions"></div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>© 2026 Alessandro Esposito</span>
-      <a href="#top">Torna su</a>
+      <span data-content="footer.copyright">© 2026 Alessandro Esposito</span>
+      <a href="#top" data-content="footer.backToTop">Torna su</a>
     </footer>
 
+    <script src="content.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
