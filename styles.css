@@ -166,6 +166,16 @@ button:focus-visible {
   color: #fff;
 }
 
+@media (min-width: 1180px) {
+  .hero {
+    grid-template-columns: minmax(0, 760px) minmax(360px, 0.82fr);
+  }
+
+  .hero-profile {
+    justify-self: center;
+  }
+}
+
 .hero-media,
 .hero-overlay {
   position: absolute;
@@ -384,7 +394,7 @@ h3 {
 
 .section-heading {
   display: grid;
-  max-width: 790px;
+  max-width: 1040px;
   gap: 8px;
   margin-bottom: 32px;
 }
@@ -448,7 +458,7 @@ h3 {
   display: grid;
   width: 100%;
   grid-template-columns: 52px minmax(0, 1fr) 38px;
-  gap: 24px;
+  gap: 20px;
   align-items: center;
   border: 0;
   padding: 30px 32px;
@@ -469,13 +479,14 @@ h3 {
 
 .capability-summary span:first-child {
   color: var(--ink);
-  font-size: 1.24rem;
+  font-size: clamp(1.08rem, 1.2vw, 1.24rem);
   font-weight: 760;
+  white-space: nowrap;
 }
 
 .capability-summary span:last-child {
   color: var(--muted);
-  max-width: 860px;
+  max-width: 1120px;
   font-size: 1.02rem;
 }
 
@@ -521,6 +532,17 @@ h3 {
   grid-template-columns: 180px minmax(240px, 0.7fr) minmax(320px, 1fr);
   gap: 34px;
   align-items: start;
+}
+
+@media (min-width: 1180px) {
+  .capability-trigger {
+    grid-template-columns: 44px minmax(0, 1fr) 34px;
+    gap: 16px;
+  }
+
+  .inline-case {
+    grid-template-columns: 160px minmax(260px, 0.5fr) minmax(560px, 1fr);
+  }
 }
 
 .skill-strip {
@@ -696,6 +718,11 @@ h3 {
   margin-top: 14px;
 }
 
+.case-label {
+  color: var(--signal);
+  font-weight: 860;
+}
+
 .case-capabilities {
   display: flex;
   flex-wrap: wrap;
@@ -818,8 +845,14 @@ h3 {
 
 .certificate-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr));
   gap: 12px;
+}
+
+@media (min-width: 1180px) {
+  .certificate h3 {
+    white-space: nowrap;
+  }
 }
 
 .certificate {
@@ -983,6 +1016,7 @@ h3 {
 
   .capability-summary span:first-child {
     font-size: 1.1rem;
+    white-space: normal;
   }
 
   .certificate {

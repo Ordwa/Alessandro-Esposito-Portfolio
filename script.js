@@ -101,6 +101,8 @@ function renderCapabilities() {
 
 function createCaseStudyMarkup(item) {
   const capabilities = item.capabilities.map((capability) => `<span>${capability}</span>`).join("");
+  const formatCaseLine = (copy) => copy.replace(/^(Obiettivo|Impatto):\s*/, '<strong class="case-label">$1:</strong> ');
+
   return `
     <div class="inline-case">
       <span class="tag">${item.tag}</span>
@@ -109,8 +111,8 @@ function createCaseStudyMarkup(item) {
         <h3>${item.title}</h3>
       </div>
       <div>
-        <p>${item.copy}</p>
-        <p class="case-evidence">${item.evidence}</p>
+        <p>${formatCaseLine(item.copy)}</p>
+        <p class="case-evidence">${formatCaseLine(item.evidence)}</p>
         <div class="case-capabilities">${capabilities}</div>
       </div>
     </div>
@@ -207,8 +209,9 @@ function renderJourney() {
 
 function renderCertificates() {
   const wrapper = document.querySelector('[data-render="certificates"]');
+  const certificates = [...content.certificates.items].sort((a, b) => Number(b.year) - Number(a.year));
   wrapper.replaceChildren(
-    ...content.certificates.items.map((item) => {
+    ...certificates.map((item) => {
       const article = document.createElement("article");
       article.className = "certificate";
       const action = item.file
