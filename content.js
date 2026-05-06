@@ -24,7 +24,7 @@ window.siteContent = {
     title: "Alessandro Esposito",
     copy:
       "Hub professionale per esplorare competenze, metodo di lavoro, percorso e case study: una fonte unica pensata per sostituire CV tradizionale e profilo LinkedIn.",
-    primaryAction: { label: "Vedi competenze e case study", target: "#competenze" },
+    primaryAction: { label: "Contattami", target: "#contatti" },
     secondaryAction: { label: "Apri CV", target: "documents/cv/Alessandro_Esposito_CV_ITA.pdf" },
   },
   snapshot: [
@@ -84,6 +84,20 @@ window.siteContent = {
       },
     ],
   },
+  skillGroups: [
+    {
+      title: "Hard skill",
+      items: ["IT Project Management", "ITSM", "Business Continuity", "Disaster Recovery", "ERP", "Cloud & Infrastructure"],
+    },
+    {
+      title: "Soft skill",
+      items: ["Stakeholder management", "Coordinamento fornitori", "Comunicazione tecnica", "Problem solving", "Orientamento al business"],
+    },
+    {
+      title: "Lingue",
+      items: ["Italiano madrelingua", "Inglese professionale"],
+    },
+  ],
   caseStudies: {
     eyebrow: "Case study",
     title: "Case study collegati alle competenze",

@@ -142,6 +142,48 @@ function bindCapabilityAccordions() {
   });
 }
 
+function renderSkillGroups() {
+  const wrapper = document.querySelector('[data-render="skillGroups"]');
+  const positions = [
+    [8, 42],
+    [42, 12],
+    [80, 32],
+    [74, 82],
+    [20, 82],
+    [78, 16],
+  ];
+
+  wrapper.replaceChildren(
+    ...content.skillGroups.map((group) => {
+      const article = document.createElement("article");
+      const links = group.items
+        .map((_, index) => {
+          const [x, y] = positions[index % positions.length];
+          return `<line x1="50" y1="50" x2="${x}" y2="${y}" />`;
+        })
+        .join("");
+      const items = group.items
+        .map((item, index) => {
+          const [x, y] = positions[index % positions.length];
+          return `<span class="skill-node" style="--x: ${x}%; --y: ${y}%;">${item}</span>`;
+        })
+        .join("");
+      article.className = "skill-group";
+      article.setAttribute("aria-label", group.title);
+      article.innerHTML = `
+        <div class="skill-network">
+          <svg class="skill-links" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            ${links}
+          </svg>
+          <span class="skill-core">${group.title}</span>
+          ${items}
+        </div>
+      `;
+      return article;
+    }),
+  );
+}
+
 function renderJourney() {
   const wrapper = document.querySelector('[data-render="journey"]');
   wrapper.replaceChildren(
@@ -149,8 +191,8 @@ function renderJourney() {
       const li = document.createElement("li");
       const tags = item.tags.map((tag) => `<span>${tag}</span>`).join("");
       li.innerHTML = `
-        <div class="timeline-marker" aria-hidden="true"></div>
         <div class="timeline-years">${item.years}</div>
+        <div class="timeline-marker" aria-hidden="true"></div>
         <article class="timeline-card">
           <p class="timeline-company">${item.company}</p>
           <h3>${item.role}</h3>
@@ -220,6 +262,7 @@ renderSnapshot();
 renderProfile();
 renderCapabilities();
 bindCapabilityAccordions();
+renderSkillGroups();
 renderJourney();
 renderCertificates();
 renderContactActions();
