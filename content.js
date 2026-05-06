@@ -23,7 +23,7 @@ window.siteContent = {
     eyebrow: "IT Architecture Consultant",
     title: "Alessandro Esposito",
     copy:
-      "Hub professionale per competenze, case study, percorso, certificazioni e contatti",
+      "Questo è lo spazio che uso come hub per raccogliere competenze, case study, percorso, certificazioni e contatti",
     quote: "If a machine is expected to be infallible, it cannot also be intelligent.",
     quoteSource:
       "Alan M. Turing - 1947",
