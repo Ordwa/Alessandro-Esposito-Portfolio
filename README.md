@@ -18,6 +18,14 @@ Apri `index.html` nel browser per visualizzarlo.
 
 Tutti i testi principali del sito sono in `content.js`. Per aggiornare titoli, paragrafi, competenze, case study, percorso, certificati e contatti modifica quel file senza toccare `index.html`.
 
+Le competenze sono mostrate come accordion collegati ai case study:
+
+- ogni voce in `capabilities.items` ha un `caseStudyId`
+- ogni voce in `caseStudies.items` ha un `id`
+- quando `caseStudyId` e `id` coincidono, l'accordion della competenza mostra quel case study inline
+
+I case study possono contenere cliente/progetto, mentre il `Percorso` deve restare focalizzato sulle aziende per cui hai lavorato.
+
 Per aggiungere una nuova esperienza nel percorso, aggiungi un oggetto nell'array `journey.items` indicando:
 
 - `years`
@@ -30,4 +38,4 @@ Per aggiungere un certificato, carica il file in `documents/certificates/` e agg
 
 ## CV
 
-Il pulsante CV punta a `documents/cv/curriculum.pdf`. Sostituisci quel file con il curriculum aggiornato mantenendo lo stesso percorso.
+Il pulsante CV punta a `documents/cv/Alessandro_Esposito_CV_ITA.pdf` e apre l'anteprima del PDF nel browser. Se aggiungi un nuovo file con un nome diverso, aggiorna `person.cvPath`, `hero.secondaryAction.target` e l'azione `Apri CV` in `content.js`.

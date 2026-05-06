@@ -29,10 +29,6 @@ function createLink(action) {
     link.rel = "noreferrer";
   }
 
-  if (action.download) {
-    link.setAttribute("download", "");
-  }
-
   return link;
 }
 
@@ -82,23 +78,68 @@ function renderCapabilities() {
   const wrapper = document.querySelector('[data-render="capabilities"]');
   wrapper.replaceChildren(
     ...content.capabilities.items.map((item) => {
-      const card = document.createElement("article");
-      card.className = "card";
-      card.innerHTML = `<span class="icon">${item.number}</span><h3>${item.title}</h3><p>${item.copy}</p>`;
-      return card;
+      const caseStudy = content.caseStudies.items.find((study) => study.id === item.caseStudyId);
+      const accordion = document.createElement("article");
+      accordion.className = "capability-accordion";
+      accordion.innerHTML = `
+        <button class="capability-trigger" type="button" aria-expanded="false">
+          <span class="icon">${item.number}</span>
+          <span class="capability-summary">
+            <span>${item.title}</span>
+            <span>${item.copy}</span>
+          </span>
+          <span class="accordion-indicator" aria-hidden="true">+</span>
+        </button>
+        <div class="capability-panel" hidden>
+          ${caseStudy ? createCaseStudyMarkup(caseStudy) : "<p>Case study non disponibile.</p>"}
+        </div>
+      `;
+      return accordion;
     }),
   );
 }
 
-function renderCaseStudies() {
-  const wrapper = document.querySelector('[data-render="caseStudies"]');
-  wrapper.replaceChildren(
-    ...content.caseStudies.items.map((item) => {
-      const article = document.createElement("article");
-      article.innerHTML = `<span>${item.tag}</span><h3>${item.title}</h3><p>${item.copy}</p>`;
-      return article;
-    }),
-  );
+function createCaseStudyMarkup(item) {
+  const capabilities = item.capabilities.map((capability) => `<span>${capability}</span>`).join("");
+  return `
+    <div class="inline-case">
+      <span class="tag">${item.tag}</span>
+      <div>
+        <p class="case-meta">${item.company} · ${item.client}</p>
+        <h3>${item.title}</h3>
+      </div>
+      <div>
+        <p>${item.copy}</p>
+        <p class="case-evidence">${item.evidence}</p>
+        <div class="case-capabilities">${capabilities}</div>
+      </div>
+    </div>
+  `;
+}
+
+function bindCapabilityAccordions() {
+  document.querySelectorAll(".capability-accordion").forEach((accordion) => {
+    const trigger = accordion.querySelector(".capability-trigger");
+    const panel = accordion.querySelector(".capability-panel");
+
+    trigger.addEventListener("click", () => {
+      const isOpen = trigger.getAttribute("aria-expanded") === "true";
+
+      document.querySelectorAll(".capability-accordion.is-open").forEach((openAccordion) => {
+        if (openAccordion === accordion) {
+          return;
+        }
+
+        openAccordion.classList.remove("is-open");
+        openAccordion.querySelector(".capability-trigger").setAttribute("aria-expanded", "false");
+        openAccordion.querySelector(".capability-panel").hidden = true;
+      });
+
+      accordion.classList.toggle("is-open", !isOpen);
+      trigger.setAttribute("aria-expanded", String(!isOpen));
+      panel.hidden = isOpen;
+    });
+  });
 }
 
 function renderJourney() {
@@ -178,7 +219,7 @@ renderHeroActions();
 renderSnapshot();
 renderProfile();
 renderCapabilities();
-renderCaseStudies();
+bindCapabilityAccordions();
 renderJourney();
 renderCertificates();
 renderContactActions();

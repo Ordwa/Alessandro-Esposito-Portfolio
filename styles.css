@@ -93,19 +93,14 @@ button:focus-visible {
   font-weight: 760;
 }
 
-.brand-mark {
-  display: grid;
+.brand-photo {
   width: 38px;
   height: 38px;
-  place-items: center;
   border: 1px solid currentColor;
   border-radius: var(--radius);
   background: rgba(46, 231, 208, 0.1);
-  color: var(--accent-strong);
   box-shadow: inset 0 0 20px rgba(46, 231, 208, 0.08);
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0;
+  object-fit: cover;
 }
 
 .nav {
@@ -164,6 +159,8 @@ button:focus-visible {
   display: grid;
   min-height: 90vh;
   align-items: end;
+  grid-template-columns: minmax(0, 760px) minmax(260px, 360px);
+  gap: clamp(28px, 6vw, 86px);
   overflow: hidden;
   padding: 132px clamp(18px, 5vw, 72px) 72px;
   color: #fff;
@@ -178,7 +175,7 @@ button:focus-visible {
 .hero-media {
   background:
     linear-gradient(90deg, rgba(5, 8, 13, 0.92), rgba(5, 8, 13, 0.58) 54%, rgba(5, 8, 13, 0.88)),
-    url("assets/consulting-workspace.svg") center / cover no-repeat;
+    url("assets/consulting-workspace.jpg") center / cover no-repeat;
   filter: saturate(0.88) contrast(1.08) brightness(0.58);
   transform: scale(1.02);
 }
@@ -200,6 +197,41 @@ button:focus-visible {
   position: relative;
   z-index: 1;
   width: min(760px, 100%);
+}
+
+.hero-profile {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(360px, 100%);
+  justify-self: end;
+  gap: 18px;
+  border: 1px solid rgba(46, 231, 208, 0.24);
+  border-radius: var(--radius);
+  padding: 18px;
+  background: rgba(8, 15, 24, 0.72);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(14px);
+}
+
+.hero-profile img {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: calc(var(--radius) - 2px);
+  object-fit: cover;
+}
+
+.hero-profile div {
+  display: grid;
+  gap: 4px;
+}
+
+.hero-profile strong {
+  font-size: 1.06rem;
+}
+
+.hero-profile span {
+  color: var(--muted);
 }
 
 .eyebrow {
@@ -359,11 +391,10 @@ h3 {
 
 .capability-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 18px;
 }
 
-.card,
 .certificate {
   display: grid;
   min-height: 258px;
@@ -380,14 +411,12 @@ h3 {
     transform 160ms ease;
 }
 
-.card:hover,
 .certificate:hover {
   border-color: rgba(46, 231, 208, 0.42);
   box-shadow: var(--glow);
   transform: translateY(-2px);
 }
 
-.card p,
 .certificate p,
 .case-list p,
 .vertical-timeline p {
@@ -404,6 +433,94 @@ h3 {
   color: var(--accent-strong);
   font-size: 0.82rem;
   font-weight: 860;
+}
+
+.capability-accordion {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  backdrop-filter: blur(14px);
+}
+
+.capability-trigger {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 52px minmax(0, 1fr) 38px;
+  gap: 24px;
+  align-items: center;
+  border: 0;
+  padding: 30px 32px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.capability-trigger:hover {
+  background: rgba(46, 231, 208, 0.05);
+}
+
+.capability-summary {
+  display: grid;
+  gap: 9px;
+}
+
+.capability-summary span:first-child {
+  color: var(--ink);
+  font-size: 1.24rem;
+  font-weight: 760;
+}
+
+.capability-summary span:last-child {
+  color: var(--muted);
+  max-width: 860px;
+  font-size: 1.02rem;
+}
+
+.accordion-indicator {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid rgba(46, 231, 208, 0.22);
+  border-radius: 50%;
+  color: var(--accent-strong);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.capability-accordion.is-open {
+  border-color: rgba(46, 231, 208, 0.42);
+  box-shadow: var(--glow);
+}
+
+.capability-accordion.is-open .accordion-indicator {
+  background: var(--accent);
+  color: #031012;
+}
+
+.capability-accordion.is-open .accordion-indicator {
+  font-size: 0;
+}
+
+.capability-accordion.is-open .accordion-indicator::before {
+  font-size: 1.2rem;
+  content: "-";
+}
+
+.capability-panel {
+  border-top: 1px solid var(--line);
+  padding: 34px 34px 38px 108px;
+  background: rgba(5, 8, 13, 0.34);
+}
+
+.inline-case {
+  display: grid;
+  grid-template-columns: 180px minmax(240px, 0.7fr) minmax(320px, 1fr);
+  gap: 34px;
+  align-items: start;
 }
 
 .accent {
@@ -426,11 +543,22 @@ h3 {
 }
 
 .case-list article {
+  scroll-margin-top: 92px;
   display: grid;
   grid-template-columns: 180px minmax(220px, 0.8fr) minmax(280px, 1fr);
   gap: 24px;
   align-items: start;
   padding: 30px 0;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.case-list article.is-active {
+  background: rgba(46, 231, 208, 0.08);
+  box-shadow:
+    -18px 0 0 rgba(46, 231, 208, 0.08),
+    18px 0 0 rgba(46, 231, 208, 0.08);
 }
 
 .case-list span,
@@ -450,9 +578,37 @@ h3 {
   margin-bottom: 0;
 }
 
+.case-meta {
+  margin-bottom: 8px;
+  color: var(--signal);
+  font-size: 0.82rem;
+  font-weight: 760;
+}
+
 .case-list p {
   margin-bottom: 0;
   color: rgba(255, 255, 255, 0.72);
+}
+
+.case-evidence {
+  margin-top: 14px;
+}
+
+.case-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.case-capabilities span {
+  border: 1px solid rgba(46, 231, 208, 0.22);
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+  font-weight: 760;
 }
 
 .timeline-section {
@@ -623,19 +779,25 @@ h3 {
 
   .snapshot,
   .two-column,
+  .hero,
   .capability-grid,
   .certificate-grid,
   .contact {
     grid-template-columns: 1fr;
   }
 
-  .capability-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .case-list article {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .inline-case {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .capability-panel {
+    padding: 26px;
   }
 
   .vertical-timeline::before {
@@ -664,6 +826,10 @@ h3 {
   .contact {
     margin-bottom: 18px;
   }
+
+  .hero-profile {
+    justify-self: start;
+  }
 }
 
 @media (max-width: 620px) {
@@ -680,15 +846,24 @@ h3 {
     padding: 108px 18px 44px;
   }
 
+  .hero-profile {
+    width: 100%;
+  }
+
   h1 {
     font-size: clamp(3.05rem, 15vw, 5.35rem);
   }
 
-  .capability-grid {
-    grid-template-columns: 1fr;
+  .capability-trigger {
+    grid-template-columns: 40px minmax(0, 1fr) 32px;
+    gap: 14px;
+    padding: 22px 18px;
   }
 
-  .card,
+  .capability-summary span:first-child {
+    font-size: 1.1rem;
+  }
+
   .certificate {
     min-height: 230px;
   }
