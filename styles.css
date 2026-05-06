@@ -380,6 +380,10 @@ h3 {
   padding: clamp(68px, 9vw, 118px) clamp(18px, 5vw, 72px);
 }
 
+#percorso {
+  scroll-margin-top: 96px;
+}
+
 .two-column {
   display: grid;
   grid-template-columns: minmax(0, 0.92fr) minmax(320px, 0.8fr);
@@ -407,11 +411,12 @@ h3 {
 
 .certificate {
   display: grid;
-  min-height: 258px;
-  align-content: space-between;
+  grid-template-rows: 1fr auto;
+  min-height: 172px;
+  align-content: stretch;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 23px;
+  padding: 20px;
   background: var(--panel);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(14px);
@@ -856,10 +861,12 @@ h3 {
 }
 
 .certificate {
-  min-height: 210px;
+  min-height: 172px;
 }
 
 .certificate a {
+  justify-self: end;
+  align-self: end;
   color: var(--accent-strong);
   font-weight: 780;
 }
@@ -1020,7 +1027,7 @@ h3 {
   }
 
   .certificate {
-    min-height: 230px;
+    min-height: 180px;
   }
 
   .skill-group {
