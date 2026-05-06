@@ -191,8 +191,6 @@ window.siteContent = {
   certificates: {
     eyebrow: "Certificati",
     title: "Certificazioni e attestati professionali",
-    intro:
-      "Sezione alimentata dai PDF presenti in documents/certificates. Aggiungi nuovi file nella cartella e una voce in questo elenco.",
     items: [
       {
         title: "Leadership Development Program - Open",
